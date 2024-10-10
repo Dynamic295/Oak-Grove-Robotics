@@ -1,0 +1,157 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="dcMotor_setProperty_RunMode" id="/]%3R/efP9U6}y81`lWD" x="98" y="-63">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="avH*m}OrV+U$uiiWM]af">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+</block>
+<block type="dcMotor_setProperty_Number" id="@~JPe:ivaTKvS)v@jtVu" x="216" y="-26">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="NBl{L[DDD$XO^$V;VwCO">
+<field name="NUM">100</field>
+</shadow>
+</value>
+</block>
+<block type="dcMotor_setProperty_Number" id=")n3zg.NP.~y!61h`{[Q?" x="87" y="10">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="obRG`/X8^jTOMZx4Mx~o">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="ej1Q(D,-SXVSQ#OQ6|_k">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+</block>
+</value>
+</block>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="139" y="110">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="KU=ad}qoN|g(#9@S;3.d">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="GSeZi)AvOXh@|Yl=?%!:">
+<field name="RUN_MODE">STOP_AND_RESET_ENCODER</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setVelocityPIDFCoefficients" id="6uv)qwLk2ea6;}J(WO2/">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="P">
+<shadow type="math_number" id="X*5S@q`*kZ,_C@Pcn]H,">
+<field name="NUM">1.17</field>
+</shadow>
+</value>
+<value name="I">
+<shadow type="math_number" id="O+@,(i|u{Se}l1y,s%ET">
+<field name="NUM">0.117</field>
+</shadow>
+</value>
+<value name="D">
+<shadow type="math_number" id=")El6*Rw|KpGfijI4LuGS">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<value name="F">
+<shadow type="math_number" id="8[bBKMaUN|%.as{4GE:2">
+<field name="NUM">11.7</field>
+</shadow>
+</value>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="dcMotor_setProperty_Number" id="YOw;M`HPwyi!Lcjp@#oV">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">TargetPosition</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="9v7.F?yR*FMkx9)!Fz_W">
+<field name="NUM">3000</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_RunMode" id="Pkedz*E+`v-cU*dIrS@s">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="=PpY9cfa7TO9H]Nt%Vej">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="3RW[=`1]yF1XU}b72Ya$">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="NxFQ2cYJ5(,mnO~=o0UL">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>

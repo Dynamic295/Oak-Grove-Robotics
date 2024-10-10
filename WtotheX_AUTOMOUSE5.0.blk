@@ -1,0 +1,154 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="dcMotor_setProperty_RunMode" id="neV.0Rdx%+F;[GrwvlpM" x="297" y="30">
+<field name="IDENTIFIER">arm1AsDcMotor</field>
+<field name="PROP">Mode</field>
+<data>{"IDENTIFIER":"arm1"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_runMode" id="waLO``?p5UcRZ+pb`p]3">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+</block>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="50" y="50">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="45" w="532">This function is executed when this OpMode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="dcMotor_setProperty_Direction" id="G)~_@BX@x+7x]?ziI0R!">
+<field name="IDENTIFIER">right_front_driveAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"right_front_drive"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="T10l~tHcs11]iIR?e.-:">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="D3y-v81r07O~KPQX],^h">
+<field name="IDENTIFIER">left_rear_driveAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"left_rear_drive"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="SrkEyQN4,#MO;Q9I$~N_">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_RunMode" id="-!AVISKFpy_*.~D2d/NH">
+<field name="PROP">Mode</field>
+<field name="IDENTIFIER1">right_front_driveAsDcMotor</field>
+<field name="IDENTIFIER2">left_rear_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"right_front_drive","IDENTIFIER2":"left_rear_drive"}</data>
+<value name="VALUE1">
+<shadow type="dcMotor_typedEnum_runMode" id="tJ)bs.DTO^q/K1!+ttcA">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="dcMotor_typedEnum_runMode" id="FS_mzh8$7xFULZWI?o8%">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_RunMode" id="+Nk66X4^9BtqxE8`urDf">
+<field name="PROP">Mode</field>
+<field name="IDENTIFIER1">left_front_driveAsDcMotor</field>
+<field name="IDENTIFIER2">right_rear_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"left_front_drive","IDENTIFIER2":"right_rear_drive"}</data>
+<value name="VALUE1">
+<shadow type="dcMotor_typedEnum_runMode" id="=o#vqdUZLDZ3[P9(@RuB">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="dcMotor_typedEnum_runMode" id="zK64@g,TH:Ql)g2u+3vn">
+<field name="RUN_MODE">RUN_WITHOUT_ENCODER</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_RunMode" id="vRxLbf@/Laxhegq9C@Ku">
+<field name="PROP">Mode</field>
+<field name="IDENTIFIER1">right_front_driveAsDcMotor</field>
+<field name="IDENTIFIER2">left_rear_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"right_front_drive","IDENTIFIER2":"left_rear_drive"}</data>
+<value name="VALUE1">
+<shadow type="dcMotor_typedEnum_runMode" id="lNw(kM70O-l*|YDog,VU">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="dcMotor_typedEnum_runMode" id="pb4Ad7n^_uI]bfw4(,$P">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_RunMode" id="GS9jA6jA0Z1%CyoBRYu8">
+<field name="PROP">Mode</field>
+<field name="IDENTIFIER1">right_front_driveAsDcMotor</field>
+<field name="IDENTIFIER2">left_rear_driveAsDcMotor</field>
+<data>{"IDENTIFIER1":"right_front_drive","IDENTIFIER2":"left_rear_drive"}</data>
+<value name="VALUE1">
+<shadow type="dcMotor_typedEnum_runMode" id="$X;dcG?)_o?|[gtJ7):Q">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<value name="VALUE2">
+<shadow type="dcMotor_typedEnum_runMode" id=",]A0Vh!@eVBfMA/bW=BI">
+<field name="RUN_MODE">RUN_TO_POSITION</field>
+</shadow>
+</value>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="comment" id="(rU-p_T_/B|vExcs}liL">
+<field name="COMMENT">Put run blocks here.</field>
+<next>
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_isStopRequested" id="/|dF3:8~LWhSKhmfAAw7"/>
+</value>
+<statement name="DO">
+<block type="comment" id="Jh/;L$n@JuX8AQJDFCul">
+<field name="COMMENT">Put loop blocks here.</field>
+<next>
+<block type="telemetry_update" id="exvivmft-pX$n!1,8Ea$"/>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
